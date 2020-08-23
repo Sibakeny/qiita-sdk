@@ -1,4 +1,5 @@
 require "qiita/sdk/version"
+require 'qiita/sdk/client'
 
 module Qiita
   module Sdk
