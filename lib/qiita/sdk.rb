@@ -1,5 +1,6 @@
 require "qiita/sdk/version"
 require 'qiita/sdk/client'
+require 'qiita/sdk/httpclient'
 
 module Qiita
   module Sdk
