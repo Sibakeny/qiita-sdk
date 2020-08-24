@@ -23,11 +23,20 @@ module Qiita
         net_http(uri).get(uri.request_uri, header)
       end
 
-      def post(url, header = {})
+      def post(url, params, header = {})
         uri = URI.parse(url)
-        net_http(uri).post(uri.request_uri, payload, header)
+        net_http(uri).post(uri.request_uri, params, header)
       end
 
+      def delete(url, header = {})
+        uri = URI.parse(url)
+        net_http(uri).delete(uri.request_uri, header)
+      end
+
+      def patch(url, params, header = {})
+        uri = URI.parse(url)
+        net_http(uri).patch(uri.request_uri, params, header)
+      end
     end
   end
 end
