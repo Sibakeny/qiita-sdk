@@ -5,10 +5,6 @@ module Qiita
       require 'uri'
       require 'json'
 
-      def initialize(access_token: nil)
-        @access_token = access_token
-      end
-
       # 'https://qiita.com/api/v2/users'
       def net_http(uri)
         http = Net::HTTP.new(uri.host, uri.port)
@@ -36,6 +32,11 @@ module Qiita
       def patch(url, params, header = {})
         uri = URI.parse(url)
         net_http(uri).patch(uri.request_uri, params, header)
+      end
+
+      def put(url, params, header = {})
+        uri = URI.parse(url)
+        net_http(uri).put(uri.request_uri, params, header)
       end
     end
   end
