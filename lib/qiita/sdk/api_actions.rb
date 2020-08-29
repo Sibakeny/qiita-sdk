@@ -73,9 +73,8 @@ module Qiita
       end
 
       # タグのフォローを外す
-      def delete_following(tag_id:)
+      def delete_tag_following(tag_id:)
         path = "/api/v2/tags/#{tag_id}/following"
-        url = API_BASE_URL + path
 
         delete(path)
       end
@@ -91,7 +90,7 @@ module Qiita
       def follow_tag(tag_id:)
         path = "/api/v2/tags/#{tag_id}/following"
 
-        put(path)
+        put(path, {})
       end
 
       # 記事をストックしているユーザ一覧を、ストックした日時の降順で返す
@@ -147,7 +146,7 @@ module Qiita
       def follow_user(user_id:)
         path = "/api/v2/users/#{user_id}/following"
 
-        put(url)
+        put(path, {})
       end
 
       # 認証中のユーザの記事の一覧を作成日時の降順で返す
@@ -165,10 +164,18 @@ module Qiita
       end
 
       # 新たに記事を作成
-      def post_item(params:)
+      def post_item(title:, body:, tweet: false, tags: [], restricted: false)
         path = "/api/v2/items"
 
-        post(url, params)
+        params = {
+          title: title,
+          body: body,
+          tweet: tweet,
+          tags: tags,
+          private: restricted
+        }
+
+        post(path, params)
       end
 
       # 記事を削除
@@ -186,22 +193,29 @@ module Qiita
       end
 
       # 記事を更新
-      def update_item(item_id:, params:)
+      def update_item(item_id:, title: nil, body: nil, restricted: nil, tags: nil)
         path = "/api/v2/items/#{item_id}"
+        params = {
+          item_id: item_id,
+          title: title,
+          body: body,
+          private: restricted,
+          tags: tags
+        }
 
-        patch(url, params)
+        patch(path, params)
       end
 
       # 記事をストック
       def stock_item(item_id:)
-        path = "/api/v2/items/#{item_id}"
+        path = "/api/v2/items/#{item_id}/stock"
 
-        put(url)
+        put(path, {})
       end
 
       # 記事をストックから取り除く
       def delete_stock(item_id:)
-        path = "/api/v2/items/#{item_id}"
+        path = "/api/v2/items/#{item_id}/stock"
 
         delete(path)
       end
@@ -235,15 +249,21 @@ module Qiita
       end
 
       # コメントに絵文字リアクションを付ける
-      def attach_reaction_to_comment(comment_id:, params:)
+      def attach_reaction_to_comment(comment_id:, name:)
         path = "/api/v2/comments/#{comment_id}/reactions"
+        params = {
+          name: name
+        }
 
         post(path, params)
       end
 
       # 記事に絵文字リアクションを付ける
-      def attach_reaction_to_item(item_id:, params:)
+      def attach_reaction_to_item(item_id:, name:)
         path = "/api/v2/items/#{item_id}/reactions"
+        params = {
+          name: name
+        }
 
         post(path, params)
       end

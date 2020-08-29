@@ -46,10 +46,10 @@ module Qiita
         httpclient.patch(url, params.to_json, headers)
       end
 
-      def put(path)
+      def put(path, params)
         url = endpoint + path
         httpclient = HTTPClient.new
-        httpclient.put(url)
+        httpclient.put(url, params)
       end
 
       def post(path, params)
@@ -61,7 +61,7 @@ module Qiita
       def delete(path)
         url = endpoint + path
         httpclient = HTTPClient.new
-        httpclient.delete(path)
+        httpclient.delete(url)
       end
 
       def endpoint
