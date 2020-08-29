@@ -41,4 +41,3 @@ module Qiita
     end
   end
 end
-

@@ -8,14 +8,14 @@ RSpec.describe Qiita::Sdk::Client do
     client = Qiita::Sdk::Client.new do |config|
       config.access_token = 'access_token'
     end
-    expect(client.credential).to eq  "Bearer access_token"
+    expect(client.credential).to eq 'Bearer access_token'
   end
 
   it 'headersがセットされていること' do
     client = Qiita::Sdk::Client.new
     default_headers = {
-      "Accept" => "application/json",
-      "Content-Type" => "application/json"
+      'Accept' => 'application/json',
+      'Content-Type' => 'application/json'
     }
     expect(client.headers).to eq default_headers
   end
@@ -23,9 +23,9 @@ RSpec.describe Qiita::Sdk::Client do
   it 'access_tokenをセットするとそれがheadersに追加されていること' do
     client = Qiita::Sdk::Client.new(access_token: 'access_token')
     headers_include_credential = {
-      "Accept" => "application/json",
-      "Content-Type" => "application/json",
-      "Authorization" => "Bearer access_token"
+      'Accept' => 'application/json',
+      'Content-Type' => 'application/json',
+      'Authorization' => 'Bearer access_token'
     }
     expect(client.headers).to eq headers_include_credential
   end
@@ -34,13 +34,4 @@ RSpec.describe Qiita::Sdk::Client do
     client = Qiita::Sdk::Client.new
     expect(client.endpoint).to eq Qiita::Sdk::Client::API_BASE_URL
   end
-
-  it 'endpointの上書き' do
-    dummy_endpoint = 'https://example.com'
-    client = Qiita::Sdk::Client.new do |config|
-      config.endpoint = dummy_endpoint
-    end
-    expect(client.endpoint).to eq dummy_endpoint
-  end
-
 end

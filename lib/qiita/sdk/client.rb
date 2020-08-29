@@ -8,14 +8,9 @@ module Qiita
       include Qiita::Sdk::ApiActions
 
       # @return [String]
-      attr_accessor :access_token, :endpoint
+      attr_accessor :access_token
 
-      API_BASE_URL = 'https://qiita.com'
-
-      DEFAULT_HEADERS = {
-        "Accept" => "application/json",
-        "Content-Type" => "application/json"
-      }
+      API_BASE_URL = 'https://qiita.com'.freeze
 
       def initialize(options = {})
         options.each do |key, value|
@@ -29,8 +24,11 @@ module Qiita
       end
 
       def headers
-        headers = DEFAULT_HEADERS.clone
-        headers["Authorization"] = credential if credential
+        headers = {
+          'Accept' => 'application/json',
+          'Content-Type' => 'application/json'
+        }
+        headers['Authorization'] = credential if credential
         headers
       end
 

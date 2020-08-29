@@ -1,13 +1,6 @@
 module Qiita
   module Sdk
     module ApiActions
-      # 全てのユーザの一覧
-      def fetch_users
-        path = '/api/v2/users'
-
-        get(path)
-      end
-
       # 記事につけられた「LGTM！」一覧
       def fetch_item_likes(item_id:)
         path = "/api/v2/items/#{item_id}/likes"
@@ -102,7 +95,7 @@ module Qiita
 
       # 全てのユーザの一覧を作成日時の降順で取得
       def fetch_users
-        path = "/api/v2/users"
+        path = '/api/v2/users'
 
         get(path)
       end
@@ -151,7 +144,7 @@ module Qiita
 
       # 認証中のユーザの記事の一覧を作成日時の降順で返す
       def fetch_my_items
-        path = "/api/v2/authenticated_user/items"
+        path = '/api/v2/authenticated_user/items'
 
         get(path)
       end
@@ -165,7 +158,7 @@ module Qiita
 
       # 新たに記事を作成
       def post_item(title:, body:, tweet: false, tags: [], restricted: false)
-        path = "/api/v2/items"
+        path = '/api/v2/items'
 
         params = {
           title: title,
@@ -298,7 +291,7 @@ module Qiita
 
       # アクセストークンに紐付いたユーザを返す
       def fetch_authenticated_user
-        path = "/api/v2/authenticated_user"
+        path = '/api/v2/authenticated_user'
 
         get(path)
       end
