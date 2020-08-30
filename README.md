@@ -38,6 +38,9 @@ Or install it yourself as:
 
 ### メソッド一覧
 
+全て戻り値は [Net::HTTPResponse] を返す
+
+
 - 記事につけられた「LGTM！」一覧を取得
 
 ```ruby
@@ -52,7 +55,7 @@ Or install it yourself as:
 
 ```ruby
   comment_id = 'XXXX'
-  res = client.delete_comment(comment_id: comment_id)
+  client.delete_comment(comment_id: comment_id)
 ```
 <br />
 <br />
@@ -85,7 +88,7 @@ Or install it yourself as:
 
 ```ruby
   item_id = 'XXXX'
-  client.fetch_item_comments(item_id: item_id)
+  res = client.fetch_item_comments(item_id: item_id)
 ```
 <br />
 <br />
@@ -108,7 +111,7 @@ Or install it yourself as:
 
 ```ruby
   tag_id = 'XXXX'
-  client.fetch_tag(tag_id: tag_id)
+  res = client.fetch_tag(tag_id: tag_id)
 ```
 <br />
 <br />
@@ -119,7 +122,7 @@ Or install it yourself as:
 
 ```ruby
   user_id = 'XXXX'
-  client.fetch_following_tags(user_id: user_id)
+  res = client.fetch_following_tags(user_id: user_id)
 ```
 <br />
 <br />
@@ -130,7 +133,7 @@ Or install it yourself as:
 
 ```ruby
   tag_id = 'XXXX'
-  cient.delete_tag_following(tag_id: tag_id)
+  client.delete_tag_following(tag_id: tag_id)
 ```
 <br />
 <br />
@@ -141,7 +144,7 @@ Or install it yourself as:
 
 ```ruby
   tag_id = 'XXXX'
-  client.check_tag_following(tag_id: tag_id)
+  res = client.check_tag_following(tag_id: tag_id)
 ```
 <br />
 <br />
@@ -163,7 +166,7 @@ Or install it yourself as:
 
 ```ruby
   item_id = 'XXXX'
-  client.fetch_item_stockers(item_id: item_id)
+  res = client.fetch_item_stockers(item_id: item_id)
 ```
 <br />
 <br />
@@ -228,7 +231,7 @@ Or install it yourself as:
 
 ```ruby
   user_id = 'XXXX'
-  client.check_following(user_id: user_id)
+  res = client.check_following(user_id: user_id)
 ```
 <br />
 <br />
@@ -347,7 +350,7 @@ restricted = false
 
 ```ruby
   item_id = 'XXXX'
-  client.check_item_stock(item_id: item_id)
+  res = client.check_item_stock(item_id: item_id)
 ```
 <br />
 <br />
@@ -436,7 +439,7 @@ restricted = false
 ```ruby
   comment_id = 'XXXX'
 
-  client.fetch_comment_reactions(comment_id: comment_id)
+  res = client.fetch_comment_reactions(comment_id: comment_id)
 ```
 <br />
 <br />
@@ -447,7 +450,7 @@ restricted = false
 ```ruby
   item_id = 'XXXX'
 
-  client.fetch_item_reactions(item_id: item_id)
+  res = client.fetch_item_reactions(item_id: item_id)
 ```
 <br />
 <br />
@@ -456,7 +459,7 @@ restricted = false
 - アクセストークンに紐付いたユーザを返す
 
 ```ruby
-  client.fetch_authenticated_user
+  res = client.fetch_authenticated_user
 ```
 <br />
 <br />
