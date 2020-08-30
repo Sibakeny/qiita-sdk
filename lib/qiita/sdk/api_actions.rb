@@ -229,7 +229,7 @@ module Qiita
 
       # 指定されたユーザの記事一覧
       def fetch_user_items(user_id:)
-        path = "/api/v2/tags/#{user_id}/items"
+        path = "/api/v2/users/#{user_id}/items"
 
         get(path)
       end
