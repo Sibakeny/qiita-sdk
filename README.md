@@ -50,6 +50,8 @@ Or install it yourself as:
   comment_id = 'XXXX'
   res = client.delete_comment(comment_id: comment_id)
 ```
+<br />
+<br />
 
 
 
@@ -59,7 +61,8 @@ Or install it yourself as:
   comment_id = 'XXXX'
   res = client.fetch_comment(comment_id: comment_id)
 ```
-
+<br />
+<br />
 
 
 - コメントを更新
@@ -69,6 +72,8 @@ Or install it yourself as:
   body = 'update body'
   client.update_comment(comment_id: comment_id, body: body)
 ```
+<br />
+<br />
 
 
 
@@ -78,6 +83,8 @@ Or install it yourself as:
   item_id = 'XXXX'
   client.fetch_item_comments(item_id: item_id)
 ```
+<br />
+<br />
 
 
 
@@ -88,6 +95,8 @@ Or install it yourself as:
   body = 'comment body'
   client.post_comment(item_id: item_id, body: body)
 ```
+<br />
+<br />
 
 
 
@@ -97,6 +106,8 @@ Or install it yourself as:
   tag_id = 'XXXX'
   client.fetch_tag(tag_id: tag_id)
 ```
+<br />
+<br />
 
 
 
@@ -106,6 +117,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   client.fetch_following_tags(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -115,6 +128,8 @@ Or install it yourself as:
   tag_id = 'XXXX'
   cient.delete_tag_following(tag_id: tag_id)
 ```
+<br />
+<br />
 
 
 
@@ -124,6 +139,8 @@ Or install it yourself as:
   tag_id = 'XXXX'
   client.check_tag_following(tag_id: tag_id)
 ```
+<br />
+<br />
 
 
 
@@ -133,6 +150,8 @@ Or install it yourself as:
   tag_id = 'XXXX'
   client.follow_tag(tag_id: tag_id)
 ```
+<br />
+<br />
 
 
 
@@ -142,6 +161,8 @@ Or install it yourself as:
   item_id = 'XXXX'
   client.fetch_item_stockers(item_id: item_id)
 ```
+<br />
+<br />
 
 
 
@@ -150,6 +171,8 @@ Or install it yourself as:
 ```ruby
   res = client.fetch_users
 ```
+<br />
+<br />
 
 
 
@@ -159,6 +182,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   res = client.fetch_user(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -168,6 +193,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   res = client.fetch_followees(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -177,6 +204,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   res = client.fetch_followers(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -186,6 +215,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   client.delete_following(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -195,6 +226,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   client.check_following(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -204,6 +237,8 @@ Or install it yourself as:
   user_id = 'XXXX'
   client.follow_user(user_id: user_id)
 ```
+<br />
+<br />
 
 
 
@@ -212,6 +247,8 @@ Or install it yourself as:
 ```ruby
   res = client.fetch_my_items
 ```
+<br />
+<br />
 
 
 
@@ -220,6 +257,8 @@ Or install it yourself as:
 ```ruby
   res = client.fetch_items
 ```
+<br />
+<br />
 
 
 
