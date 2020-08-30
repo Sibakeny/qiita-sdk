@@ -34,16 +34,17 @@ Or install it yourself as:
 
 ### メソッド一覧
 
-#### 記事につけられた「LGTM！」一覧を取得
+- 記事につけられた「LGTM！」一覧を取得
 
 ```ruby
   item_id = 'XXXX'
   res = client.fetch_item_likes(item_id: item_id)
 ```
+<br />
+<br />
 
 
-
-#### コメントを削除
+- コメントを削除
 
 ```ruby
   comment_id = 'XXXX'
@@ -52,7 +53,7 @@ Or install it yourself as:
 
 
 
-#### コメントを取得
+- コメントを取得
 
 ```ruby
   comment_id = 'XXXX'
@@ -61,7 +62,7 @@ Or install it yourself as:
 
 
 
-#### コメントを更新
+- コメントを更新
 
 ```ruby
   comment_id = 'XXXX'
@@ -71,7 +72,7 @@ Or install it yourself as:
 
 
 
-#### 投稿に紐づけられた投稿一覧
+- 投稿に紐づけられた投稿一覧
 
 ```ruby
   item_id = 'XXXX'
@@ -80,7 +81,7 @@ Or install it yourself as:
 
 
 
-#### 記事に対してコメントを投稿
+- 記事に対してコメントを投稿
 
 ```ruby
   item_id = 'XXXX'
@@ -90,7 +91,7 @@ Or install it yourself as:
 
 
 
-#### タグを取得
+- タグを取得
 
 ```ruby
   tag_id = 'XXXX'
@@ -99,7 +100,7 @@ Or install it yourself as:
 
 
 
-#### ユーザがフォローしているタグ一覧
+- ユーザがフォローしているタグ一覧
 
 ```ruby
   user_id = 'XXXX'
@@ -108,7 +109,7 @@ Or install it yourself as:
 
 
 
-#### タグのフォローを外す
+- タグのフォローを外す
 
 ```ruby
   tag_id = 'XXXX'
@@ -117,7 +118,7 @@ Or install it yourself as:
 
 
 
-#### タグをフォローしているかどうかを調る
+- タグをフォローしているかどうかを調る
 
 ```ruby
   tag_id = 'XXXX'
@@ -126,7 +127,7 @@ Or install it yourself as:
 
 
 
-#### タグをフォロー
+- タグをフォロー
 
 ```ruby
   tag_id = 'XXXX'
@@ -135,7 +136,7 @@ Or install it yourself as:
 
 
 
-#### 記事をストックしているユーザ一覧を、ストックした日時の降順で返す
+- 記事をストックしているユーザ一覧を、ストックした日時の降順で返す
 
 ```ruby
   item_id = 'XXXX'
@@ -144,7 +145,7 @@ Or install it yourself as:
 
 
 
-#### 全てのユーザの一覧を作成日時の降順で取得
+- 全てのユーザの一覧を作成日時の降順で取得
 
 ```ruby
   res = client.fetch_users
@@ -152,7 +153,7 @@ Or install it yourself as:
 
 
 
-#### ユーザを取得
+- ユーザを取得
 
 ```ruby
   user_id = 'XXXX'
@@ -161,7 +162,7 @@ Or install it yourself as:
 
 
 
-#### ユーザがフォローしているユーザ一覧を取得
+- ユーザがフォローしているユーザ一覧を取得
 
 ```ruby
   user_id = 'XXXX'
@@ -170,7 +171,7 @@ Or install it yourself as:
 
 
 
-#### ユーザをフォローしているユーザ一覧を取得
+- ユーザをフォローしているユーザ一覧を取得
 
 ```ruby
   user_id = 'XXXX'
@@ -179,7 +180,7 @@ Or install it yourself as:
 
 
 
-#### ユーザへのフォローを外します。
+- ユーザへのフォローを外します。
 
 ```ruby
   user_id = 'XXXX'
@@ -188,7 +189,7 @@ Or install it yourself as:
 
 
 
-#### ユーザをフォローしている場合に204を返す
+- ユーザをフォローしている場合に204を返す
 
 ```ruby
   user_id = 'XXXX'
@@ -197,7 +198,7 @@ Or install it yourself as:
 
 
 
-#### ユーザをフォロー
+- ユーザをフォロー
 
 ```ruby
   user_id = 'XXXX'
@@ -206,7 +207,7 @@ Or install it yourself as:
 
 
 
-#### 認証中のユーザの記事の一覧を作成日時の降順で返す
+- 認証中のユーザの記事の一覧を作成日時の降順で返す
 
 ```ruby
   res = client.fetch_my_items
@@ -214,7 +215,7 @@ Or install it yourself as:
 
 
 
-#### 記事の一覧を作成日時の降順で返す
+- 記事の一覧を作成日時の降順で返す
 
 ```ruby
   res = client.fetch_items
@@ -222,7 +223,7 @@ Or install it yourself as:
 
 
 
-#### 新たに記事を作成
+- 新たに記事を作成
 
 title, bodyは必須
 
@@ -243,7 +244,7 @@ restricted = false
 
 
 
-#### 記事を削除
+- 記事を削除
 
 ```ruby
   item_id = 'XXXX'
@@ -252,7 +253,7 @@ restricted = false
 
 
 
-#### 記事を取得
+- 記事を取得
 
 ```ruby
   item_id = 'XXXX'
@@ -261,7 +262,7 @@ restricted = false
 
 
 
-#### 記事を更新
+- 記事を更新
 
 ```ruby
   item_id = 'XXXX'
@@ -275,7 +276,7 @@ restricted = false
 
 
 
-#### 記事をストック
+- 記事をストック
 
 ```ruby
   item_id = 'XXXX'
@@ -284,7 +285,7 @@ restricted = false
 
 
 
-#### 記事をストックから取り除く
+- 記事をストックから取り除く
 
 ```ruby
   item_id = 'XXXX'
@@ -293,7 +294,7 @@ restricted = false
 
 
 
-#### 記事をストックしているかどうか調べる
+- 記事をストックしているかどうか調べる
 
 ```ruby
   item_id = 'XXXX'
@@ -302,7 +303,7 @@ restricted = false
 
 
 
-#### タグの記事一覧
+- タグの記事一覧
 
 ```ruby
   tag_id = 'XXXX'
@@ -311,7 +312,7 @@ restricted = false
 
 
 
-#### 指定されたユーザの記事一覧
+- 指定されたユーザの記事一覧
 
 ```ruby
   user_id = 'XXXX'
@@ -320,7 +321,7 @@ restricted = false
 
 
 
-#### 指定されたユーザがストックした記事一覧
+- 指定されたユーザがストックした記事一覧
 
 ```ruby
   user_id = 'XXXX'
@@ -329,7 +330,7 @@ restricted = false
 
 
 
-#### コメントに絵文字リアクションを付ける
+- コメントに絵文字リアクションを付ける
 
 ```ruby
   comment_id = 'XXXX'
@@ -340,7 +341,7 @@ restricted = false
 
 
 
-#### 記事に絵文字リアクションを付ける
+- 記事に絵文字リアクションを付ける
 
 ```ruby
   item_id = 'XXXX'
@@ -351,7 +352,7 @@ restricted = false
 
 
 
-#### コメントから絵文字リアクションを削除
+- コメントから絵文字リアクションを削除
 
 ```ruby
   comment_id = 'XXXX'
@@ -362,7 +363,7 @@ restricted = false
 
 
 
-#### 記事から絵文字リアクションを削除
+- 記事から絵文字リアクションを削除
 
 ```ruby
   item_id = 'XXXX'
@@ -373,7 +374,7 @@ restricted = false
 
 
 
-#### コメントに付けられた絵文字リアクション一覧
+- コメントに付けられた絵文字リアクション一覧
 
 ```ruby
   comment_id = 'XXXX'
@@ -383,7 +384,7 @@ restricted = false
 
 
 
-#### 記事に付けられた絵文字リアクション一覧
+- 記事に付けられた絵文字リアクション一覧
 
 ```ruby
   item_id = 'XXXX'
@@ -393,7 +394,7 @@ restricted = false
 
 
 
-#### アクセストークンに紐付いたユーザを返す
+- アクセストークンに紐付いたユーザを返す
 
 ```ruby
   client.fetch_authenticated_user
