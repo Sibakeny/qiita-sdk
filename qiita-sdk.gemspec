@@ -3,18 +3,18 @@ require_relative 'lib/qiita/sdk/version'
 Gem::Specification.new do |spec|
   spec.name          = 'qiita-sdk'
   spec.version       = Qiita::Sdk::VERSION
-  spec.authors       = ['yonetani']
+  spec.authors       = ['sibakeny']
   spec.email         = ['sbkn0919@gmail.com']
 
-  spec.summary       = 'qiita sdk'
-  spec.description   = 'qiita sdk'
-  spec.homepage      = 'http://example.com/'
+  spec.summary       = 'qiita sdk for ruby'
+  spec.description   = 'qiita sdk for ruby'
+  spec.homepage      = 'https://gitlab.com/sibakeny/qiita-sdk'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'http://example.com/'
-  spec.metadata['changelog_uri'] = 'http://example.com/'
+  spec.metadata['source_code_uri'] = 'https://gitlab.com/sibakeny/qiita-sdk'
+  spec.metadata['changelog_uri'] = 'https://gitlab.com/sibakeny/qiita-sdk'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
