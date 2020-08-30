@@ -1,12 +1,8 @@
 # Qiita::Sdk
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/qiita/sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[Qiita Api](https://qiita.com/api/v2/docs) の Api クライアント
 
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'qiita-sdk'
@@ -22,17 +18,305 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### インスタンスの作成
 
-## Development
+```ruby
+  client = Qiita::Sdk::Client.new
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### メソッド一覧
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+- 記事につけられた「LGTM！」一覧を取得
 
-## Contributing
+```ruby
+  item_id = 'XXXX'
+  res = client.fetch_item_likes(item_id: item_id)
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/qiita-sdk. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/qiita-sdk/blob/master/CODE_OF_CONDUCT.md).
+- コメントを削除
+
+```ruby
+  comment_id = 'XXXX'
+  res = client.delete_comment(comment_id: comment_id)
+```
+
+- コメントを取得
+
+```ruby
+  comment_id = 'XXXX'
+  res = client.fetch_comment(comment_id: comment_id)
+```
+
+- コメントを更新
+
+```ruby
+  comment_id = 'XXXX'
+  body = 'update body'
+  client.update_comment(comment_id: comment_id, body: body)
+```
+
+- 投稿に紐づけられた投稿一覧
+
+```ruby
+  item_id = 'XXXX'
+  client.fetch_item_comments(item_id: item_id)
+```
+
+- 記事に対してコメントを投稿
+
+```ruby
+  item_id = 'XXXX'
+  body = 'comment body'
+  client.post_comment(item_id: item_id, body: body)
+```
+
+- タグを取得
+
+```ruby
+  tag_id = 'XXXX'
+  client.fetch_tag(tag_id: tag_id)
+```
+
+- ユーザがフォローしているタグ一覧
+
+```ruby
+  user_id = 'XXXX'
+  client.fetch_following_tags(user_id: user_id)
+```
+
+- タグのフォローを外す
+
+```ruby
+  tag_id = 'XXXX'
+  cient.delete_tag_following(tag_id: tag_id)
+```
+
+- タグをフォローしているかどうかを調る
+
+```ruby
+  tag_id = 'XXXX'
+  client.check_tag_following(tag_id: tag_id)
+```
+
+- タグをフォロー
+
+```ruby
+  tag_id = 'XXXX'
+  client.follow_tag(tag_id: tag_id)
+```
+
+- 記事をストックしているユーザ一覧を、ストックした日時の降順で返す
+
+```ruby
+  item_id = 'XXXX'
+  client.fetch_item_stockers(item_id: item_id)
+```
+
+- 全てのユーザの一覧を作成日時の降順で取得
+
+```ruby
+  res = client.fetch_users
+```
+
+- ユーザを取得
+
+```ruby
+  user_id = 'XXXX'
+  res = client.fetch_user(user_id: user_id)
+```
+
+- ユーザがフォローしているユーザ一覧を取得
+
+```ruby
+  user_id = 'XXXX'
+  res = client.fetch_followees(user_id: user_id)
+```
+
+- ユーザをフォローしているユーザ一覧を取得
+
+```ruby
+  user_id = 'XXXX'
+  res = client.fetch_followers(user_id: user_id)
+```
+
+- ユーザへのフォローを外します。
+
+```ruby
+  user_id = 'XXXX'
+  client.delete_following(user_id: user_id)
+```
+
+- ユーザをフォローしている場合に204を返す
+
+```ruby
+  user_id = 'XXXX'
+  client.check_following(user_id: user_id)
+```
+
+- ユーザをフォロー
+
+```ruby
+  user_id = 'XXXX'
+  client.follow_user(user_id: user_id)
+```
+
+- 認証中のユーザの記事の一覧を作成日時の降順で返す
+
+```ruby
+  res = client.fetch_my_items
+```
+
+- 記事の一覧を作成日時の降順で返す
+
+```ruby
+  res = client.fetch_items
+```
+
+- 新たに記事を作成
+
+title, bodyは必須
+
+デフォルト値
+tweet = false
+tags = []
+restricted = false
+
+```ruby
+  title = 'title'
+  body = 'body'
+  tweet = true
+  tags = ['ruby', 'rails']
+  restricted = false
+
+  client.post_item(title: title, body: body, tweet: tweet, tags: tags, restricted: restricted)
+```
+
+- 記事を削除
+
+```ruby
+  item_id = 'XXXX'
+  client.delete_item(item_id: item_id)
+```
+
+- 記事を取得
+
+```ruby
+  item_id = 'XXXX'
+  res = client.fetch_item(item_id: item_id)
+```
+
+- 記事を更新
+
+```ruby
+  item_id = 'XXXX'
+  title = 'update title'
+  body = 'update body'
+  restricted = false
+  tags = ['rails']
+
+  client.update_item(item_id: item_id, title: title, body: body, restricted: restricted, tags: tags)
+```
+
+- 記事をストック
+
+```ruby
+  item_id = 'XXXX'
+  client.stock_item(item_id: item_id)
+```
+
+- 記事をストックから取り除く
+
+```ruby
+  item_id = 'XXXX'
+  client.delete_stock(item_id: item_id)
+```
+
+- 記事をストックしているかどうか調べる
+
+```ruby
+  item_id = 'XXXX'
+  client.check_item_stock(item_id: item_id)
+```
+
+- タグの記事一覧
+
+```ruby
+  tag_id = 'XXXX'
+  res = client.fetch_tag_items(teg_id: tag_id)
+```
+
+- 指定されたユーザの記事一覧
+
+```ruby
+  user_id = 'XXXX'
+  res = client.fetch_user_items(user_id: user_id)
+```
+
+- 指定されたユーザがストックした記事一覧
+
+```ruby
+  user_id = 'XXXX'
+  res = client.fetch_user_stocks(user_id: user_id)
+```
+
+- コメントに絵文字リアクションを付ける
+
+```ruby
+  comment_id = 'XXXX'
+  name = 'XXXX'
+
+  client.attach_reaction_to_comment(comment_id: comment_id, name: name)
+```
+
+- 記事に絵文字リアクションを付ける
+
+```ruby
+  item_id = 'XXXX'
+  name = 'XXXX'
+
+  client.attach_reaction_to_item(item_id: item_id, name: name)
+```
+
+- コメントから絵文字リアクションを削除
+
+```ruby
+  comment_id = 'XXXX'
+  reaction_name = 'XXXX'
+
+  client.delete_comment_reaction(comment_id: comment_id, reaction_name: reaction_name)
+```
+
+- 記事から絵文字リアクションを削除
+
+```ruby
+  item_id = 'XXXX'
+  reaction_name = 'XXXX'
+
+  client.delete_item_reaction(item_id: item_id, reaction_name: reaction_name)
+```
+
+- コメントに付けられた絵文字リアクション一覧
+
+```ruby
+  comment_id = 'XXXX'
+
+  client.fetch_comment_reactions(comment_id: comment_id)
+```
+
+- 記事に付けられた絵文字リアクション一覧
+
+```ruby
+  item_id = 'XXXX'
+
+  client.fetch_item_reactions(item_id: item_id)
+```
+
+- アクセストークンに紐付いたユーザを返す
+
+```ruby
+  client.fetch_authenticated_user
+```
+
 
 
 ## License
