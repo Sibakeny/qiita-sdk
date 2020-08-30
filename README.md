@@ -325,7 +325,8 @@ restricted = false
   item_id = 'XXXX'
   client.stock_item(item_id: item_id)
 ```
-
+<br />
+<br />
 
 
 - 記事をストックから取り除く
