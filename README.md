@@ -280,7 +280,8 @@ restricted = false
 
   client.post_item(title: title, body: body, tweet: tweet, tags: tags, restricted: restricted)
 ```
-
+<br />
+<br />
 
 
 - 記事を削除
@@ -289,7 +290,8 @@ restricted = false
   item_id = 'XXXX'
   client.delete_item(item_id: item_id)
 ```
-
+<br />
+<br />
 
 
 - 記事を取得
@@ -298,7 +300,8 @@ restricted = false
   item_id = 'XXXX'
   res = client.fetch_item(item_id: item_id)
 ```
-
+<br />
+<br />
 
 
 - 記事を更新
@@ -312,7 +315,8 @@ restricted = false
 
   client.update_item(item_id: item_id, title: title, body: body, restricted: restricted, tags: tags)
 ```
-
+<br />
+<br />
 
 
 - 記事をストック
@@ -330,7 +334,8 @@ restricted = false
   item_id = 'XXXX'
   client.delete_stock(item_id: item_id)
 ```
-
+<br />
+<br />
 
 
 - 記事をストックしているかどうか調べる
@@ -339,7 +344,8 @@ restricted = false
   item_id = 'XXXX'
   client.check_item_stock(item_id: item_id)
 ```
-
+<br />
+<br />
 
 
 - タグの記事一覧
@@ -348,7 +354,8 @@ restricted = false
   tag_id = 'XXXX'
   res = client.fetch_tag_items(teg_id: tag_id)
 ```
-
+<br />
+<br />
 
 
 - 指定されたユーザの記事一覧
@@ -357,7 +364,8 @@ restricted = false
   user_id = 'XXXX'
   res = client.fetch_user_items(user_id: user_id)
 ```
-
+<br />
+<br />
 
 
 - 指定されたユーザがストックした記事一覧
@@ -366,7 +374,8 @@ restricted = false
   user_id = 'XXXX'
   res = client.fetch_user_stocks(user_id: user_id)
 ```
-
+<br />
+<br />
 
 
 - コメントに絵文字リアクションを付ける
@@ -377,7 +386,8 @@ restricted = false
 
   client.attach_reaction_to_comment(comment_id: comment_id, name: name)
 ```
-
+<br />
+<br />
 
 
 - 記事に絵文字リアクションを付ける
@@ -388,7 +398,8 @@ restricted = false
 
   client.attach_reaction_to_item(item_id: item_id, name: name)
 ```
-
+<br />
+<br />
 
 
 - コメントから絵文字リアクションを削除
@@ -399,7 +410,8 @@ restricted = false
 
   client.delete_comment_reaction(comment_id: comment_id, reaction_name: reaction_name)
 ```
-
+<br />
+<br />
 
 
 - 記事から絵文字リアクションを削除
@@ -410,7 +422,8 @@ restricted = false
 
   client.delete_item_reaction(item_id: item_id, reaction_name: reaction_name)
 ```
-
+<br />
+<br />
 
 
 - コメントに付けられた絵文字リアクション一覧
@@ -420,7 +433,8 @@ restricted = false
 
   client.fetch_comment_reactions(comment_id: comment_id)
 ```
-
+<br />
+<br />
 
 
 - 記事に付けられた絵文字リアクション一覧
@@ -430,7 +444,8 @@ restricted = false
 
   client.fetch_item_reactions(item_id: item_id)
 ```
-
+<br />
+<br />
 
 
 - アクセストークンに紐付いたユーザを返す
@@ -438,8 +453,8 @@ restricted = false
 ```ruby
   client.fetch_authenticated_user
 ```
-
-
+<br />
+<br />
 
 ## License
 
