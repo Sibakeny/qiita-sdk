@@ -23,6 +23,8 @@ Or install it yourself as:
 ```ruby
   client = Qiita::Sdk::Client.new
 ```
+<br />
+<br />
 
 認証が必要なアクションを行う場合
 
@@ -31,6 +33,8 @@ Or install it yourself as:
     config.access_token = 'XXXX'
   end
 ```
+<br />
+<br />
 
 ### メソッド一覧
 
