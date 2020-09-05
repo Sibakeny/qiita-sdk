@@ -143,10 +143,15 @@ module Qiita
       end
 
       # 認証中のユーザの記事の一覧を作成日時の降順で返す
-      def fetch_my_items
+      def fetch_my_items(per_page: 100, page: 1)
         path = '/api/v2/authenticated_user/items'
 
-        get(path)
+        params = {
+          per_page: per_page,
+          page: page
+        }
+
+        get(path, params)
       end
 
       # 記事の一覧を作成日時の降順で返す
@@ -233,17 +238,27 @@ module Qiita
       end
 
       # 指定されたユーザの記事一覧
-      def fetch_user_items(user_id:)
+      def fetch_user_items(user_id:, per_page: 100, page: 1)
         path = "/api/v2/users/#{user_id}/items"
 
-        get(path)
+        params = {
+          per_page: per_page,
+          page: page
+        }
+
+        get(path, params)
       end
 
       # 指定されたユーザがストックした記事一覧
-      def fetch_user_stocks(user_id:)
+      def fetch_user_stocks(user_id:, per_page: 100, per: 1)
         path = "/api/v2/users/#{user_id}/stocks"
 
-        get(path)
+        params = {
+          per_page: per_page,
+          page: page
+        }
+
+        get(path, params)
       end
 
       # コメントに絵文字リアクションを付ける
