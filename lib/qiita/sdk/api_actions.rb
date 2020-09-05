@@ -150,10 +150,15 @@ module Qiita
       end
 
       # 記事の一覧を作成日時の降順で返す
-      def fetch_items
+      def fetch_items(per_page: 100, page: 1)
         path = '/api/v2/items'
 
-        get(path)
+        params = {
+          per_page: per_page,
+          page: page
+        }
+
+        get(path, params)
       end
 
       # 新たに記事を作成

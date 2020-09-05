@@ -13,8 +13,10 @@ module Qiita
         http
       end
 
-      def get(url, header = {})
+      def get(url, params = {}, header = {})
         uri = URI.parse(url)
+        query = URI.encode_www_form(params)
+        uri.query = query
 
         net_http(uri).get(uri.request_uri, header)
       end

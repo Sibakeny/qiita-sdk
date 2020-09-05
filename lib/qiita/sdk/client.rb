@@ -32,10 +32,10 @@ module Qiita
         headers
       end
 
-      def get(path)
+      def get(path, params)
         url = endpoint + path
         httpclient = HTTPClient.new
-        httpclient.get(url, headers)
+        httpclient.get(url, params, headers)
       end
 
       def patch(path, params)
