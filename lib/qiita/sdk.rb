@@ -2,7 +2,6 @@ require 'qiita/sdk/version'
 require 'qiita/sdk/api_actions'
 require 'qiita/sdk/client'
 require 'qiita/sdk/httpclient'
-require 'pry'
 
 
 module Qiita
