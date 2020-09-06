@@ -32,25 +32,25 @@ module Qiita
         headers
       end
 
-      def get(path, params)
+      def get(path, params = {})
         url = endpoint + path
         httpclient = HTTPClient.new
         httpclient.get(url, params, headers)
       end
 
-      def patch(path, params)
+      def patch(path, params = {})
         url = endpoint + path
         httpclient = HTTPClient.new
         httpclient.patch(url, params.to_json, headers)
       end
 
-      def put(path, params)
+      def put(path, params = {})
         url = endpoint + path
         httpclient = HTTPClient.new
         httpclient.put(url, params)
       end
 
-      def post(path, params)
+      def post(path, params = {})
         url = endpoint + path
         httpclient = HTTPClient.new
         httpclient.post(url, params.to_json, headers)
