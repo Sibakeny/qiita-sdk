@@ -41,6 +41,8 @@ module Qiita
       def patch(path, params = {})
         url = endpoint + path
         httpclient = HTTPClient.new
+        p '========'
+        p params.to_json
         httpclient.patch(url, params.to_json, headers)
       end
 

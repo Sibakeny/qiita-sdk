@@ -167,14 +167,13 @@ module Qiita
       end
 
       # 新たに記事を作成
-      def post_item(title:, body:, tweet: false, tags: [], restricted: false)
+      def post_item(title:, body:, tweet: false, restricted: false)
         path = '/api/v2/items'
 
         params = {
           title: title,
           body: body,
           tweet: tweet,
-          tags: tags,
           private: restricted
         }
 
@@ -196,14 +195,12 @@ module Qiita
       end
 
       # 記事を更新
-      def update_item(item_id:, title: nil, body: nil, restricted: nil, tags: nil)
+      def update_item(item_id:, title: nil, body: nil, restricted: false)
         path = "/api/v2/items/#{item_id}"
         params = {
-          item_id: item_id,
           title: title,
           body: body,
           private: restricted,
-          tags: tags
         }
 
         patch(path, params)
