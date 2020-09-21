@@ -167,14 +167,15 @@ module Qiita
       end
 
       # 新たに記事を作成
-      def post_item(title:, body:, tweet: false, restricted: false)
+      def post_item(title:, body:, tags: [], tweet: false, restricted: false)
         path = '/api/v2/items'
 
         params = {
           title: title,
           body: body,
           tweet: tweet,
-          private: restricted
+          private: restricted,
+          tags: tags.map { |tag| {name: tag} }
         }
 
         post(path, params)
@@ -195,13 +196,17 @@ module Qiita
       end
 
       # 記事を更新
-      def update_item(item_id:, title: nil, body: nil, restricted: false)
+      def update_item(item_id:, title: nil, body: nil, restricted: false, tags: [])
         path = "/api/v2/items/#{item_id}"
         params = {
           title: title,
           body: body,
           private: restricted,
         }
+
+        tag_params = tags.map { |tag| { name: tag } }
+
+        params.merge!({tags: tag_params}) if tags.present?
 
         patch(path, params)
       end
