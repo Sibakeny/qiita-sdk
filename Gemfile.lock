@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    qiita-sdk (0.8.0)
+    qiita-sdk (1.0.0)
 
 GEM
   remote: https://rubygems.org/

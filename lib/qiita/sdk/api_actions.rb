@@ -179,7 +179,7 @@ module Qiita
 
         tag_params = tags.map { |tag| { name: tag } }
 
-        params.merge!({tags: tag_params}) if tags.present?
+        params.merge!({tags: tag_params}) if !tags.empty?
 
         post(path, params)
       end
@@ -209,7 +209,7 @@ module Qiita
 
         tag_params = tags.map { |tag| { name: tag } }
 
-        params.merge!({tags: tag_params}) if tags.present?
+        params.merge!({tags: tag_params}) if !tags.empty?
 
         patch(path, params)
       end
