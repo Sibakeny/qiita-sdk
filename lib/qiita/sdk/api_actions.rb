@@ -177,9 +177,9 @@ module Qiita
           private: restricted,
         }
 
+        raise 'タグは最低一つ設定してください' if tags.empty?
         tag_params = tags.map { |tag| { name: tag } }
-
-        params.merge!({tags: tag_params}) if !tags.empty?
+        params.merge!({tags: tag_params})
 
         post(path, params)
       end
