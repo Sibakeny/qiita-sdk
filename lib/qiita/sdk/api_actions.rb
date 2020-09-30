@@ -175,8 +175,11 @@ module Qiita
           body: body,
           tweet: tweet,
           private: restricted,
-          tags: tags.map { |tag| {name: tag} }
         }
+
+        tag_params = tags.map { |tag| { name: tag } }
+
+        params.merge!({tags: tag_params}) if tags.present?
 
         post(path, params)
       end
